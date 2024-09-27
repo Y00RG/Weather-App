@@ -1,0 +1,157 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #f0f2f5; /* Light background for the body */
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+header.navbar {
+  background-color: #3498db; /* Light blue for header */
+  padding: 1rem;
+}
+
+header .header-content {
+  text-align: center; /* Center content in the header */
+}
+
+header h5 {
+  color: white; /* Header text color */
+  font-size: 1.5rem; /* Header font size */
+}
+
+header p {
+  color: white; /* Header description text color */
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(45deg, #2980b9, #2ecc71); /* Darker gradient for hero section */
+  color: white;
+  padding: 4rem 0;
+}
+
+.hero h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-form input {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  width: 300px;
+  margin-right: 10px;
+  font-size: 1rem;
+}
+
+.search-form .btn {
+  background-color: #27ae60; /* Button color */
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.search-form .btn:hover {
+  background-color: #219653; /* Button hover color */
+}
+
+/* Weather Result Section */
+.weather-result .container {
+  padding: 2rem;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 2rem auto;
+}
+
+.card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #3498db; /* Color for card titles */
+}
+
+.weather-details {
+  list-style: none;
+  padding: 0;
+}
+
+.weather-details li {
+  padding: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.weather-details img {
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
+/* Footer */
+footer {
+  background-color: #273c75; /* Dark blue for footer */
+  color: white;
+  padding: 1rem 0; /* Simpler padding */
+  text-align: center;
+}
+
+footer h5 {
+  font-size: 1rem; /* Simpler footer header */
+  color: #ecf0f1; /* Light color */
+}
+
+footer p {
+  margin: 10px 0;
+}
+
+footer a {
+  color: #1abc9c; /* Link color */
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #16a085; /* Link hover color */
+}
+
+footer ul {
+  padding: 0; /* Remove default padding */
+  list-style: none; /* Remove bullet points */
+}
+
+footer ul li {
+  margin: 5px 0; /* Space out the links */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .search-form input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .search-form {
+    flex-direction: column;
+  }
+}
+

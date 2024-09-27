@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" />
+  <title>Weather App</title>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="container">
+      <div class="header-content">
+        <h5 class="text-uppercase">
+          <img src="{% static 'images/weather.png' %}" class="img-brand" alt="WeatherApp" style="width:50px;">
+          WeatherApp
+        </h5>
+        <p>Get real-time weather updates from around the world, wherever you are.</p>
+      </div>
+    </div>
+  </header>
+
+  <section id="hero" class="hero">
+    <div class="container text-center">
+      <form method="post" class="search-form">
+        {% csrf_token %}
+        <input type="text" class="form-control" name="city" placeholder="Enter City Name" required>
+        <button type="submit" class="btn">Search</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="weather-result">
+    <div class="container">
+        {% if error %}
+            <div class="error-message">
+                <p>{{ error }}</p>
+            </div>
+        {% elif country_code and coordinate and temp and pressure and humidity %}
+            <div class="card">
+                <h3>Weather in {{ city }}</h3>
+                <ul class="weather-details">
+                    <li><strong>Country:</strong> {{ country_code }}</li>
+                    <li><strong>Coordinates:</strong> {{ coordinate }}</li>
+                    <li><strong>Temperature:</strong> {{ temp }}</li>
+                    <li><strong>Humidity:</strong> {{ humidity }}</li>
+                    <li><strong>Forecast:</strong> {{ main }} <img src="http://openweathermap.org/img/w/{{ icon }}.png" alt="weather-icon"></li>
+                    <li><strong>Description:</strong> {{ description }}</li>
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+</section>
+
+  {% include 'footer.html' %}
+</body>
+
+</html>
